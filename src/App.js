@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import { HomePage } from './components/home/HomePage.js';
+import { CropPage } from './components/crop/CropPage';
+import { FertilizerPage } from './components/fertilizer/FertilizerPage';
+
+function NotFound(){ 
+  return(<> <h1> NOT FOUND 404 </h1> </>)}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage/>}/>
+      <Route path="/crop" element={<CropPage/>}/>
+      <Route path="/fertilizer" element={<FertilizerPage/>}/>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
