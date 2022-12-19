@@ -12,6 +12,7 @@ export function HomePage() {
     return (
         <div className="homepage">
             <Header className="header" />
+            
             <p className="question"> What Crop to grow this Season ? </p>
             <p className="description">
                 Welcome to CropFusionAI, where we put the "AI" in "farming".
@@ -24,6 +25,7 @@ export function HomePage() {
                 Start using CropFusionAI  today and let the robots handle the dirty work!
             </p>
             <button className="start_btn" onClick={()=> navigate("/crop")}> GET STARTED </button>
+
             <div className="container">
                 <Background3D />
             </div>

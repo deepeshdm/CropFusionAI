@@ -2,8 +2,8 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { HomePage } from './components/home/HomePage.js';
-import { CropPage } from './components/crop/CropPage';
-import { FertilizerPage } from './components/fertilizer/FertilizerPage';
+import { CropPage } from './components/crop/CropPage.js';
+import { FertilizerPage } from './components/fertilizer/FertilizerPage.js';
 
 function NotFound(){ 
   return(<> <h1> NOT FOUND 404 </h1> </>)}
