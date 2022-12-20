@@ -9,7 +9,7 @@ export function CropPage() {
     return (
     <> 
     <Header/>
-    <p> Enter soil characteristics to find the best crop to grow on your farm </p> 
+    <p> Enter soil characteristics to find the best crop to grow on your farm 👩‍🌾🌽🚜</p> 
     <div className="crop-container">
     <TextField id="nitrogen-input" label="Ratio of Nitrogen" variant="outlined" color="success"/>
     <TextField id="temp-input" label="Temperature in Celsius" variant="outlined" color="success"/>

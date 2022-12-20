@@ -7,7 +7,7 @@ export function FertilizerPage() {
     return (
     <> 
     <Header/>
-    <p> Enter soil characteristics & crop you are growing to find the best fertilizer </p> 
+    <p> Enter soil characteristics & crop you are growing to find best fertilizer 👩‍🌾🌽🚜 </p> 
     <div className="fertilizer-container">
     <TextField id="nitrogen-input" label="Ratio of Nitrogen" variant="outlined" color="success"/>
     <TextField id="temp-input" label="Temperature in Celsius" variant="outlined" color="success"/>
