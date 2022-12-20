@@ -1,5 +1,4 @@
 
-
 body{
     background-color: white;
 }
@@ -13,7 +12,7 @@ p {
     margin-top: 5%;
 }
 
-.predict_crop_btn{
+.predict_fertilizer_btn{
     background-color: #0C9463;
     border: none;
     color: white;
@@ -25,37 +24,24 @@ p {
     font-weight: bold;
     border-radius: 7px;
     width: 15rem;
+    margin-left: 60%;
 }
 
-.predict_crop_btn:hover {
+.predict_fertilizer_btn:hover {
     background-color: #007553;
   }
   
-.predict_crop_btn:active {
+.predict_fertilizer_btn:active {
     transform: scale(0.95, 0.95);
   }
   
 
 
-.crop-container{
+.fertilizer-container{
     margin-left: 33%;
     display: inline-grid;    
     grid-template-columns: 250px 250px;
     column-gap: 50px;
    row-gap: 30px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

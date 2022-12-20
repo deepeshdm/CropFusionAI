@@ -10,6 +10,9 @@ const Header = () => {
         <div className="header">
             <div className="logo"> <Link to="/"> CropFusionAI </Link> </div>
             <ul>
+            <li>
+                    <Link to="/"> Home </Link>
+                </li>
                 <li>
                     <Link to="/crop">Crop Recommendation </Link>
                 </li>

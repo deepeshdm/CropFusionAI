@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.1",
+    "@mui/system": "^5.11.1",
     "@react-three/drei": "^9.47.1",
     "@react-three/fiber": "^8.9.1",
     "@testing-library/jest-dom": "^5.16.5",
