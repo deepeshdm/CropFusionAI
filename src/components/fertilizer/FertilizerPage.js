@@ -119,12 +119,12 @@ export function FertilizerPage() {
             <div className="fertilizer-container">
                 <TextField id="nitrogen-fertilizer-input" label="Ratio of Nitrogen" variant="outlined" color="success" type="number"/>
                 <TextField id="temp-fertilizer-input" label="Temperature in Celsius" variant="outlined" color="success" type="number"/>
+                <SoilTypeSelectField />
+                <CropTypeSelectField/>
                 <TextField id="phosphorous-fertilizer-input" label="Ratio of Phosphorous" variant="outlined" color="success" type="number"/>
                 <TextField id="humidity-fertilizer-input" label="% of Humidity" variant="outlined" color="success" type="number" />
                 <TextField id="potassium-fertilizer-input" label="Ratio of Potassium" variant="outlined" color="success" type="number"/>
                 <TextField id="moisture-fertilizer-input" label="Moisture in the soil" variant="outlined" color="success" type="number" />
-                <SoilTypeSelectField />
-                <CropTypeSelectField/>
                 <button className="predict_fertilizer_btn" onClick={handleClick}> PREDICT </button>
             </div>
 
