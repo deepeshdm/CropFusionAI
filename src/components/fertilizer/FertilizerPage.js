@@ -10,11 +10,17 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 
+var soilTypeVal = ""
+var cropTypeVal = ""
+
+//-------------------------------------------------------------------------------
+
 // Select field for soil types
 function SoilTypeSelectField() {
     const [soilType, setSoilType] = React.useState('');
     const handleChange = (event) => {
         setSoilType(event.target.value);
+        soilTypeVal = event.target.value;
     };
 
     return (
@@ -26,6 +32,7 @@ function SoilTypeSelectField() {
                     id="soil-select-field"
                     value={soilType}
                     label="Type of Soil"
+                    color="success"
                     onChange={handleChange}>
                     <MenuItem value={"Sandy"}>Sandy</MenuItem>
                     <MenuItem value={"Loamy"}>Loamy</MenuItem>
@@ -45,17 +52,19 @@ function CropTypeSelectField() {
     const [cropType, setCropType] = React.useState('');
     const handleChange = (event) => {
         setCropType(event.target.value);
+        cropTypeVal = event.target.value;
     };
 
     return (
         <Box sx={{ minWidth: 120 }}>
             <FormControl fullWidth>
-                <InputLabel id="crop-select-field"> Type of Soil </InputLabel>
+                <InputLabel id="crop-select-field"> Type of Crop </InputLabel>
                 <Select
                     labelId="crop-select-field"
                     id="crop-select-field"
                     value={cropType}
                     label="Type of Crop growing"
+                    color="success"
                     onChange={handleChange}>
                     <MenuItem value={"Maize"}>Maize</MenuItem>
                     <MenuItem value={"Sugarcane"}>Sugarcane</MenuItem>
@@ -77,22 +86,46 @@ function CropTypeSelectField() {
 
 //-------------------------------------------------------------------------------
 
+function handleClick() {
+    // Get the values of all text fields
+    const nitrogenValue = document.getElementById('nitrogen-fertilizer-input').value;
+    const tempValue = document.getElementById('temp-fertilizer-input').value;
+    const phosphorousValue = document.getElementById('phosphorous-fertilizer-input').value;
+    const humidityValue = document.getElementById('humidity-fertilizer-input').value;
+    const potassiumValue = document.getElementById('potassium-fertilizer-input').value;
+    const moistureValue = document.getElementById('moisture-fertilizer-input').value;
+  
+    // Display all the values in a single alert window
+    window.alert(`Nitrogen Ratio: ${nitrogenValue}
+  Temperature: ${tempValue}
+  Phosphorous Ratio: ${phosphorousValue}
+  Humidity: ${humidityValue}
+  Potassium Ratio: ${potassiumValue}
+  Moisture: ${moistureValue}
+  Soil Type : ${soilTypeVal}
+  Crop Type : ${cropTypeVal}
+  `);
+  }
+  
+
+//-------------------------------------------------------------------------------
+
 export function FertilizerPage() {
 
     return (
         <>
             <Header />
-            <p> Enter soil characteristics & crop you are growing to find best fertilizer 👩‍🌾🌽🚜 </p>
+            <p className="fertilizer-p"> Enter soil characteristics & crop you are growing to find best <b> FERTILIZER </b> for your farm 👩‍🌾🌽🚜 </p>
             <div className="fertilizer-container">
-                <TextField id="nitrogen-input" label="Ratio of Nitrogen" variant="outlined" color="success" />
-                <TextField id="temp-input" label="Temperature in Celsius" variant="outlined" color="success" />
-                <TextField id="phosphorous-input" label="Ratio of Phosphorous" variant="outlined" color="success" />
-                <TextField id="humidity-input" label="% of Humidity" variant="outlined" color="success" />
-                <TextField id="potassium-input" label="Ratio of Potassium" variant="outlined" color="success" />
-                <TextField id="moisture-input" label="Moisture in the soil" variant="outlined" color="success" />
+                <TextField id="nitrogen-fertilizer-input" label="Ratio of Nitrogen" variant="outlined" color="success" type="number"/>
+                <TextField id="temp-fertilizer-input" label="Temperature in Celsius" variant="outlined" color="success" type="number"/>
+                <TextField id="phosphorous-fertilizer-input" label="Ratio of Phosphorous" variant="outlined" color="success" type="number"/>
+                <TextField id="humidity-fertilizer-input" label="% of Humidity" variant="outlined" color="success" type="number" />
+                <TextField id="potassium-fertilizer-input" label="Ratio of Potassium" variant="outlined" color="success" type="number"/>
+                <TextField id="moisture-fertilizer-input" label="Moisture in the soil" variant="outlined" color="success" type="number" />
                 <SoilTypeSelectField />
                 <CropTypeSelectField/>
-                <button className="predict_fertilizer_btn"> PREDICT </button>
+                <button className="predict_fertilizer_btn" onClick={handleClick}> PREDICT </button>
             </div>
 
         </>

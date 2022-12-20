@@ -21,7 +21,7 @@ const Header = () => {
                 </li>
                 <li>
                     <Link to="#" onClick={() => { window.open('https://github.com/deepeshdm/CropFusionAI-Frontend', '_blank'); }}>
-                        About
+                        Project
                     </Link>
                 </li>
 
