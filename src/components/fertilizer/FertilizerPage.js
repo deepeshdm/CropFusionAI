@@ -8,7 +8,8 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import { output_descriptions } from "./FertilizerOutputs.js";
+import { useNavigate } from "react-router-dom";
 
 var soilTypeVal = ""
 var cropTypeVal = ""
@@ -122,7 +123,7 @@ function focusEmptyFields() {
 
 const FERTILIZER_ENDPOINT = 'http://localhost:8000/fertilizer_recommend'
 
-function handleClick() {
+function handleClick(navigate) {
 
     // Continue only if all fields are non-empty
     const isFieldEmpty = focusEmptyFields();
@@ -154,6 +155,11 @@ function handleClick() {
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data)
+            console.log(output_descriptions[data])
+
+            // Redirect to Result page along with predicted fertilizer
+            navigate("/fertilizer_result", { state: { predicted_fertilizer: data } })
+
         }).catch(error => {
             console.error('Error:', error)
             window.alert("Some Error Occured, Try again.")
@@ -165,6 +171,8 @@ function handleClick() {
 //-------------------------------------------------------------------------------
 
 export function FertilizerPage() {
+
+    const navigate = useNavigate();
 
     return (
         <>
@@ -179,7 +187,7 @@ export function FertilizerPage() {
                 <TextField id="humidity-fertilizer-input" label="% of Humidity" variant="outlined" color="success" type="number" />
                 <TextField id="potassium-fertilizer-input" label="Ratio of Potassium" variant="outlined" color="success" type="number" />
                 <TextField id="moisture-fertilizer-input" label="Moisture in the soil" variant="outlined" color="success" type="number" />
-                <button className="predict_fertilizer_btn" onClick={handleClick}> PREDICT </button>
+                <button className="predict_fertilizer_btn" onClick={() => { handleClick(navigate) }}> PREDICT </button>
             </div>
 
         </>
