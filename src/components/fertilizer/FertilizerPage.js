@@ -12,7 +12,6 @@ import Select from '@mui/material/Select';
 
 var soilTypeVal = ""
 var cropTypeVal = ""
-
 //-------------------------------------------------------------------------------
 
 // Select field for soil types
@@ -84,9 +83,54 @@ function CropTypeSelectField() {
     );
 }
 
+//--------------------------------------------------------------------
+
+// Focus on Empty Input fields
+function focusEmptyFields() {
+
+    // list of all the input elements
+    const inputElements = [
+        document.getElementById('nitrogen-fertilizer-input'),
+        document.getElementById('temp-fertilizer-input'),
+        document.getElementById('phosphorous-fertilizer-input'),
+        document.getElementById('humidity-fertilizer-input'),
+        document.getElementById('potassium-fertilizer-input'),
+        document.getElementById('moisture-fertilizer-input'),
+    ];
+
+    // Check if any of the input fields is empty & focus on it
+    for (let i = 0; i < inputElements.length; i++) {
+        if (inputElements[i].value === '') {
+            inputElements[i].focus();
+            return 0;
+        }
+    }
+
+    // Check if select fields are empty
+    if (soilTypeVal == "" || cropTypeVal == "") {
+        window.alert("Fill all Input fields !")
+        return 0;
+    }
+
+    return 1;
+
+}
+
 //-------------------------------------------------------------------------------
 
+// Fertilizer JSON Input - { "array": [Temparature,Humidity,Moisture,Nitrogen,Potassium,Phosphorous,Soil Type,Crop Type] }
+
+const FERTILIZER_ENDPOINT = 'http://localhost:8000/fertilizer_recommend'
+
 function handleClick() {
+
+    // Continue only if all fields are non-empty
+    const isFieldEmpty = focusEmptyFields();
+    if (isFieldEmpty == 0) {
+        console.log("Some Inputs are empty !")
+        return;
+    }
+
     // Get the values of all text fields
     const nitrogenValue = document.getElementById('nitrogen-fertilizer-input').value;
     const tempValue = document.getElementById('temp-fertilizer-input').value;
@@ -94,19 +138,29 @@ function handleClick() {
     const humidityValue = document.getElementById('humidity-fertilizer-input').value;
     const potassiumValue = document.getElementById('potassium-fertilizer-input').value;
     const moistureValue = document.getElementById('moisture-fertilizer-input').value;
-  
+
     // Display all the values in a single alert window
-    window.alert(`Nitrogen Ratio: ${nitrogenValue}
-  Temperature: ${tempValue}
-  Phosphorous Ratio: ${phosphorousValue}
-  Humidity: ${humidityValue}
-  Potassium Ratio: ${potassiumValue}
-  Moisture: ${moistureValue}
-  Soil Type : ${soilTypeVal}
-  Crop Type : ${cropTypeVal}
-  `);
-  }
-  
+    const data = {
+        array: [tempValue, humidityValue, moistureValue, nitrogenValue, potassiumValue,
+            phosphorousValue, soilTypeVal, cropTypeVal]
+    }
+
+    // Send POST request to ML model
+    fetch(FERTILIZER_ENDPOINT, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data)
+        }).catch(error => {
+            console.error('Error:', error)
+            window.alert("Some Error Occured, Try again.")
+        });
+
+}
+
 
 //-------------------------------------------------------------------------------
 
@@ -117,13 +171,13 @@ export function FertilizerPage() {
             <Header />
             <p className="fertilizer-p"> Enter soil characteristics & crop you are growing to find best <b> FERTILIZER </b> for your farm 👩‍🌾🌽🚜 </p>
             <div className="fertilizer-container">
-                <TextField id="nitrogen-fertilizer-input" label="Ratio of Nitrogen" variant="outlined" color="success" type="number"/>
-                <TextField id="temp-fertilizer-input" label="Temperature in Celsius" variant="outlined" color="success" type="number"/>
+                <TextField id="nitrogen-fertilizer-input" label="Ratio of Nitrogen" variant="outlined" color="success" type="number" />
+                <TextField id="temp-fertilizer-input" label="Temperature in Celsius" variant="outlined" color="success" type="number" />
                 <SoilTypeSelectField />
-                <CropTypeSelectField/>
-                <TextField id="phosphorous-fertilizer-input" label="Ratio of Phosphorous" variant="outlined" color="success" type="number"/>
+                <CropTypeSelectField />
+                <TextField id="phosphorous-fertilizer-input" label="Ratio of Phosphorous" variant="outlined" color="success" type="number" />
                 <TextField id="humidity-fertilizer-input" label="% of Humidity" variant="outlined" color="success" type="number" />
-                <TextField id="potassium-fertilizer-input" label="Ratio of Potassium" variant="outlined" color="success" type="number"/>
+                <TextField id="potassium-fertilizer-input" label="Ratio of Potassium" variant="outlined" color="success" type="number" />
                 <TextField id="moisture-fertilizer-input" label="Moisture in the soil" variant="outlined" color="success" type="number" />
                 <button className="predict_fertilizer_btn" onClick={handleClick}> PREDICT </button>
             </div>

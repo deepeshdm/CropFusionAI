@@ -60,7 +60,7 @@ function handleClick(navigate) {
             tempValue, humidityValue, phValue, rainfallValue]
     }
 
-    // Send POST request to ML models
+    // Send POST request to ML model
     fetch(CROP_ENDPOINT, {
         method: 'POST',
         body: JSON.stringify(data),
