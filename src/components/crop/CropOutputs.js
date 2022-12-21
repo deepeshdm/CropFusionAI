@@ -1,12 +1,13 @@
 
 
-const labels = ["rice", "maize", "chickpea", "kidneybeans", "pigeonpeas",
+export const labels = ["rice", "maize", "chickpea", "kidneybeans", "pigeonpeas",
     "mothbeans", "mungbean", "blackgram", "lentil", "pomegranate",
     "banana", "mango", "grapes", "watermelon", "muskmelon", "apple",
     "orange", "papaya", "coconut", "cotton", "jute", "coffee"]
 
 
-const output_descriptions = {
+// Descriptions for each crop predicted by the ML model.
+export const output_descriptions = {
 
     "rice": `Rice is a highly adaptable crop that can thrive in a wide range of soil types, including those with high levels of nitrogen, phosphorous, and humidity. It is a great crop for farmers who want to make the most of their rainfall, as it is extremely efficient at using water and can yield up to 10 times more grain per unit of water compared to other cereal crops. Rice is also a great choice for farmers who are looking to diversify their crop rotation, as it can help to improve soil health by fixing nitrogen back into the soil. Plus, rice is a staple food for billions of people around the world, so with the right marketing strategy, you could potentially sell your rice for a premium price. And let's be real, who doesn't love a good bowl of rice? It's the perfect blank canvas for any type of dish, and it's super versatile - you can cook it in a rice cooker, on the stovetop, or even in the microwave. So if you're looking to add a tasty and profitable crop to your farm, consider giving rice a try. With the right soil conditions and a little bit of TLC, you could be well on your way to a successful rice harvest.`,
     "maize": ` If you're looking to add some diversity to your crop rotation, maize might be the perfect choice for you! Not only is it a highly nutritious and versatile grain, but it's also well-suited to a variety of soil conditions. With its moderate nitrogen requirements and ability to thrive in both high and low phosphorus soils, maize is a reliable choice no matter what your farm's nutrient profile looks like. Plus, with its tolerance for a range of rainfall and humidity levels, you won't have to worry about the weather ruining your harvest. And if you're concerned about pH, maize is a pretty forgiving crop - it can grow in soils with a pH range of 5.5 to 7.5. So why wait? Start planting some maize today and watch your profits grow! `,
@@ -31,40 +32,4 @@ const output_descriptions = {
     "jute": ` Jute is a fantastic crop that is not only environmentally friendly, but it also has a variety of uses, from making burlap sacks to creating fabric for clothing and home furnishings. In fact, jute is often referred to as the 'golden fiber' due to its versatility and value. Growing jute is a great way to add some diversity to your crop rotation and potentially increase your profits. It's also a low maintenance crop that thrives in well-draining soil with a pH between 6.0 and 7.0. It requires relatively low levels of Nitrogen and Phosphorous, and it can tolerate moderate levels of rainfall and humidity. If your soil is rich in these nutrients and you get plenty of rainfall and humidity, then jute might just be the perfect crop for you. Give it a try and see how it works out - you might be surprised at how well it grows! Not to mention, you'll be helping to preserve the environment by growing a sustainable and biodegradable crop. `,
     "coffee": ` Coffee is a great crop to consider growing! Not only is it a popular and lucrative crop, but it can also thrive in a variety of soil conditions. For starters, coffee plants require well-draining soil with a slightly acidic pH level between 6.0 and 6.5. If your soil is already in this range, you're off to a great start! In terms of nutrients, coffee plants need a moderate amount of nitrogen, phosphorous, and potassium to thrive. If your soil is already rich in these nutrients, your coffee plants will be able to draw on them as needed. As for water, coffee plants prefer a humid climate with regular rainfall. If you already have a humid environment with a consistent source of water, your coffee plants will be able to soak up all the hydration they need. So, if you've got the right soil conditions and a love for a good cup of joe, give coffee a try! `,
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

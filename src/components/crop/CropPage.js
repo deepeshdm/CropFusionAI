@@ -3,6 +3,8 @@
 import Header from "../header/Header.js"
 import "./CropPage.css"
 import { TextField } from "@mui/material"
+import { useNavigate } from "react-router-dom"
+import { output_descriptions } from "./CropOutputs"
 
 //--------------------------------------------------------------------
 
@@ -24,19 +26,25 @@ function focusEmptyFields() {
     for (let i = 0; i < inputElements.length; i++) {
         if (inputElements[i].value === '') {
             inputElements[i].focus();
-            return;
+            return 0;
         }
     }
+
+    return 1;
 }
 
 //--------------------------------------------------------------------
 
 const CROP_ENDPOINT = 'http://localhost:8000/crop_recommend'
 
-function handleClick() {
+function handleClick(navigate) {
 
     // Continue only if all fields are non-empty
-    focusEmptyFields();
+    const isFieldEmpty = focusEmptyFields();
+    if (isFieldEmpty == 0) {
+        console.log("Some Inputs are empty !")
+        return;
+    }
 
     // Get the values of all input fields
     const nitrogenValue = document.getElementById('nitrogen-crop-input').value;
@@ -56,13 +64,21 @@ function handleClick() {
     fetch(CROP_ENDPOINT, {
         method: 'POST',
         body: JSON.stringify(data),
-        headers: {
-            'Content-Type': 'application/json'
-        }
+        headers: {'Content-Type': 'application/json'}
     })
         .then(response => response.json())
-        .then(data => console.log('Success:', data))
-        .catch(error => console.error('Error:', error));
+        .then(data => {
+            console.log('Success:', data)
+            console.log(output_descriptions[data])
+
+            // Redirect to Result page along with predicted crop
+            navigate("/crop_result",{state:{ predicted_crop: data}})
+
+
+        }).catch(error => {
+            console.error('Error:', error)
+            window.alert("Some Error Occured, Try again.")
+        });
 }
 
 //--------------------------------------------------------------------
@@ -76,6 +92,8 @@ const crop_value_ranges = {
 
 export function CropPage() {
 
+    const navigate = useNavigate();
+
     return (
         <>
             <Header />
@@ -88,7 +106,7 @@ export function CropPage() {
                 <TextField id="potassium-crop-input" label="Ratio of Potassium" variant="outlined" color="success" type="number" />
                 <TextField id="ph-crop-input" label="PH Level of soil" variant="outlined" color="success" type="number" />
                 <TextField id="rainfall-crop-input" label="Rainfall in Milimeter (mm)" variant="outlined" color="success" type="number" />
-                <button className="predict_crop_btn" onClick={handleClick}> PREDICT </button>
+                <button className="predict_crop_btn" onClick={()=> handleClick(navigate)}> PREDICT </button>
             </div>
         </>
     )
