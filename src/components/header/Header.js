@@ -17,7 +17,7 @@ const Header = () => {
                     <Link to="/crop">Crop Recommendation </Link>
                 </li>
                 <li>
-                    <Link to="/fertilizer">Fertilizer Recommendation </Link>
+                    <Link to="/fertilizer"> Fertilizer Recommendation </Link>
                 </li>
                 <li>
                     <Link to="#" onClick={() => { window.open('https://github.com/deepeshdm/CropFusionAI-Frontend', '_blank'); }}>
