@@ -35,7 +35,7 @@ function focusEmptyFields() {
 
 //--------------------------------------------------------------------
 
-const CROP_ENDPOINT = 'http://localhost:8000/crop_recommend'
+const CROP_ENDPOINT = 'https://8080-797137136eb6451193a1f8c64a951490.patr.cloud/crop_recommend'
 
 function handleClick(navigate) {
 
