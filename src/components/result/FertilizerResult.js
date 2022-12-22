@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Header from '../header/Header';
 import "./FertilizerResult.css"
 import { useNavigate, useLocation } from 'react-router-dom';
-import { output_descriptions } from '../fertilizer/FertilizerOutputs';
+import { output_descriptions, label_image_paths } from '../fertilizer/FertilizerOutputs';
 
 export function FertilizerResult() {
     const navigate = useNavigate();
@@ -26,11 +26,14 @@ export function FertilizerResult() {
     }
 
     const predicted_fertilizer = locationState["predicted_fertilizer"];
+    const output_image_path = label_image_paths[predicted_fertilizer];
+    console.log('Image Path : ', output_image_path)
 
     return (
         <>
             <Header />
             <p className="fertilizer-result-p"> You should use <b> {predicted_fertilizer.toUpperCase()} </b> fertilizer in your farm !</p>
+            <img className="fertilizer-result-img" src={output_image_path}  />
             <p className="fertilizer-result-description"> {output_descriptions[predicted_fertilizer]} </p>
             <button className="fertilizer-try-btn" onClick={() => navigate("/fertilizer")}> Try again ? </button>
         </>

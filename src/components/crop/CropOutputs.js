@@ -6,6 +6,33 @@ export const labels = ["rice", "maize", "chickpea", "kidneybeans", "pigeonpeas",
     "orange", "papaya", "coconut", "cotton", "jute", "coffee"]
 
 
+// Image paths for each output crop
+export const label_image_paths = {
+    "rice" : "images/crops/rice.jpg", 
+    "maize": "images/crops/maize.jpg", 
+    "chickpea": "images/crops/chickpea.jpg", 
+    "kidneybeans": "images/crops/kidneybeans.jpg", 
+    "pigeonpeas": "images/crops/pigeonpea.jpg", 
+    "mothbeans": "images/crops/mothbeans.jpg", 
+    "mungbean": "images/crops/mungbean.jpg", 
+    "blackgram": "images/crops/blackgram.jpg", 
+    "lentil": "images/crops/lentil.jpg", 
+    "pomegranate": "images/crops/pomegranate.jpg", 
+    "banana": "images/crops/banana.jpg", 
+    "mango": "images/crops/mango.jpg", 
+    "grapes": "images/crops/grapes.jpg", 
+    "watermelon": "images/crops/watermelon.jpg", 
+     "muskmelon": "images/crops/muskmelon.jpg", 
+     "apple": "images/crops/apple.jpg", 
+    "orange": "images/crops/orange.jpg", 
+    "papaya": "images/crops/papaya.jpg", 
+    "coconut": "images/crops/coconut.jpg", 
+    "cotton": "images/crops/cotton.jpg", 
+    "jute": "images/crops/jute.jpg", 
+    "coffee": "images/crops/coffee.jpg", 
+}
+
+
 // Descriptions for each crop predicted by the ML model.
 export const output_descriptions = {
 

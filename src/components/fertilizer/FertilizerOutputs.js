@@ -3,6 +3,17 @@
 
 export const labels = ["Urea","DAP","14-35-14","28-28","17-17-17","20-20","10-26-26"]
 
+// Image paths for each output fertilizer
+export const label_image_paths = {
+    "Urea":"images/fertilizers/urea.jpg", 
+    "DAP": "images/fertilizers/DAP.jpg", 
+    "14-35-14": "images/fertilizers/default.jpg", 
+    "28-28":"images/fertilizers/default.jpg", 
+    "17-17-17": "images/fertilizers/default.jpg", 
+    "20-20":"images/fertilizers/default.jpg", 
+    "10-26-26": "images/fertilizers/default.jpg", 
+}
+
 // Descriptions for each fertilizer predicted by the ML model.
 export const output_descriptions = {
 
