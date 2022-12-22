@@ -121,7 +121,7 @@ function focusEmptyFields() {
 
 // Fertilizer JSON Input - { "array": [Temparature,Humidity,Moisture,Nitrogen,Potassium,Phosphorous,Soil Type,Crop Type] }
 
-const FERTILIZER_ENDPOINT = 'http://localhost:8000/fertilizer_recommend'
+const FERTILIZER_ENDPOINT = 'https://8080-797137136eb6451193a1f8c64a951490.patr.cloud/fertilizer_recommend'
 
 function handleClick(navigate) {
 
