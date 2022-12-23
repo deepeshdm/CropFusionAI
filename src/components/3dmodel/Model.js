@@ -13,6 +13,7 @@ import { PointLightHelper } from 'three'
 const model_path = 'Model/scene.gltf'
 
 function Model() {
+  console.log("Some Model Textures will not be loaded to improve speed.")
   // load the model using the GLTFLoader
   const model = useLoader(GLTFLoader, model_path)
   console.log(model)
@@ -41,7 +42,7 @@ const Light = () => {
   useFrame(() => {
     const time = window.performance.now()
     const radius = 4
-    const speed = 0.0008
+    const speed = 0.001
     const x = radius * Math.cos(time * speed)
     ref.current.position.set(x,4,0)
   })
@@ -76,7 +77,7 @@ const ThreeApp = () => {
      <OrbitControls minPolarAngle={0.5} maxPolarAngle={1.5} />
      <Light/>
      <FarmLight/>
-     <Sparkles count={90} size={3} scale={7} position={[-3,1,4]} color={0xFFA500} />
+     <Sparkles count={200} size={3} scale={7} position={[-3,1,4]} color={0xFFA500} />
      <Model/>
    </Canvas>
  )
