@@ -1,7 +1,7 @@
 
 import './App.css';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { HomePage } from './components/home/HomePage.js';
+import { ModelLoader } from './components/home/HomePage.js';
 import { CropPage } from './components/crop/CropPage.js';
 import { FertilizerPage } from './components/fertilizer/FertilizerPage.js';
 import { CropResult } from './components/result/CropResult';
@@ -15,7 +15,7 @@ function NotFound(){
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage/>}/>
+      <Route path="/" element={<ModelLoader/>}/>
       <Route path="/crop" element={<CropPage/>}/>
       <Route path="/fertilizer" element={<FertilizerPage/>}/>
       <Route path="/crop_result" element={<CropResult/>}/>

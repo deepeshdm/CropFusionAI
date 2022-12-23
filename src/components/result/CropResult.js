@@ -18,7 +18,7 @@ export function CropResult() {
             console.log("Redirecting to /crop...")
             navigate("/crop")
         }
-    }, [locationState]);
+    }, [locationState, navigate]);
 
     if(locationState==null){
         console.log("LocationState is null")

@@ -18,7 +18,7 @@ export function FertilizerResult() {
             console.log("Redirecting to /fertilizer...")
             navigate("/fertilizer")
         }
-    }, [locationState]);
+    }, [locationState, navigate]);
 
     if (locationState == null) {
         console.log("LocationState is null")

@@ -1,27 +1,16 @@
 import "./Model.css"
 import { useRef } from 'react';
-import { Canvas, useLoader, useFrame } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, PerspectiveCamera, useHelper, Sparkles } from '@react-three/drei';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { PointLightHelper } from 'three'
-import { Html, useProgress } from '@react-three/drei'
-import { Suspense } from "react";
 
 //------------------------------------------------------------------
 
-// Add 3D model
-
-// path of model from "Public" dir
-const model_path = 'Model/scene.gltf'
-
-function Model() {
+function Model(props) {
 
   console.log("Some Model Textures will not be loaded to improve speed.")
 
-  // load the model using the GLTFLoader
-  console.log("Loading the 3D model...")
-  const model = useLoader(GLTFLoader, model_path)
-  console.log(model)
+  const model = props.model;
 
   // increase model size
   model.scene.scale.set(1, 1, 1)
@@ -31,7 +20,6 @@ function Model() {
 
   // rotate the model
   model.scene.rotation.set(0, 3, 0)
-
 
   return <primitive object={model.scene} />
 }
@@ -69,39 +57,30 @@ const FarmLight = () => {
   )
 }
 
-
 //------------------------------------------------------------------
 
 const alpha = 0 // canvas background opacity
 
-const ThreeApp = () => {
-
-  // Loader to show while the model is being loaded.
-  function Loader() {
-    const { progress } = useProgress()
-    return <Html style={{ color: "white", fontSize: "20px", fontFamily:"sans-serif" }}>{progress.toFixed(2)} % </Html>
-  }
+const ThreeApp = (props) => {
 
   return (
     <Canvas onCreated={state => state.gl.setClearAlpha(alpha)} >
-      <Suspense fallback={<Loader />}>
-        <Model />
-      </Suspense>
       <PerspectiveCamera makeDefault position={[0, 4.5, 8.5]} />
       {/* <axesHelper args={[20]} /> */}
+      <Sparkles count={200} size={3} scale={7} position={[-3, 1, 4]} color={0xFFA500} />
       <OrbitControls minPolarAngle={0.5} maxPolarAngle={1.5} />
       <Light />
       <FarmLight />
-      <Sparkles count={200} size={3} scale={7} position={[-3, 1, 4]} color={0xFFA500} />
+       <Model model={props.model}/>
     </Canvas>
   )
 }
 
-const Background3D = () => {
+const Background3D = (props) => {
   const CanvasSize = { height: "100vh", width: "100vw" }
   return (
     <div id="container" style={CanvasSize}>
-      <ThreeApp />
+      <ThreeApp model={props.model}/>
     </div>
   )
 }
