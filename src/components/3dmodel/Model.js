@@ -32,11 +32,11 @@ function Model() {
 
 //------------------------------------------------------------------
 
-// Add Light with Helper
+// Add Lights with Helper
 
 const Light = () => {
   const ref = useRef()
-//   useHelper(ref, PointLightHelper, 0.3)
+  // useHelper(ref, PointLightHelper, 0.3)
 
   useFrame(() => {
     const time = window.performance.now()
@@ -53,6 +53,17 @@ const Light = () => {
   )
 }
 
+const FarmLight = () => {
+  const ref = useRef()
+  // useHelper(ref, PointLightHelper, 0.3)
+  return (
+    <>
+    <pointLight args={[0xFFE1A8, 1, 100 ]} position={[-2,1,3]} ref={ref} />
+    </>
+  )
+}
+
+
 //------------------------------------------------------------------
 
 const alpha = 0 // canvas background opacity
@@ -64,6 +75,7 @@ const ThreeApp = () => {
      {/* <axesHelper args={[20]} /> */}
      <OrbitControls minPolarAngle={0.5} maxPolarAngle={1.5} />
      <Light/>
+     <FarmLight/>
      <Sparkles count={90} size={3} scale={7} position={[-3,1,4]} color={0xFFA500} />
      <Model/>
    </Canvas>
