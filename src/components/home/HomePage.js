@@ -35,7 +35,7 @@ function HomePage(props) {
             <button className="start_btn" onClick={() => navigate("/crop")}> GET STARTED </button>
 
             <div className="container">
-                <Background3D model={props.model} />
+            {props.children}
             </div>
         </div>
     )
@@ -46,7 +46,7 @@ function HomePage(props) {
 export function ModelLoader() {
 
     const [isLoading, setIsLoading] = useState(true);
-    const [model, setModel] = useState(null);
+    const [bg, setBg] = useState(null);
 
     // Spinner CSS
     const override = {
@@ -60,11 +60,17 @@ export function ModelLoader() {
         // Load 3D model
         loader.load(model_path, (model) => {
 
+            const bg = ()=>{
+                return(
+                    <>
+                     <HomePage>
+                     <Background3D model={model} />
+                     </HomePage>
+                    </>
+                )
+            }
 
-
-
-            
-            setModel(model);
+            setBg(bg);
             setIsLoading(false);
         });
     }, []);
@@ -90,7 +96,7 @@ export function ModelLoader() {
      // Show Home page if model is loaded.
     return (
         <>
-            <HomePage model={model} />
+           {bg}
         </>
     );
 }
