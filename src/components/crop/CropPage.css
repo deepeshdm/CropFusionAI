@@ -4,17 +4,16 @@ body{
     background-color: white;
 }
 
-
 .crop-p {
     color: black;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: x-large;
-    margin-left: 25%;
+    margin-left: 23%;
     margin-top: 5%;
 }
 
 .predict_crop_btn{
-    background-color: #0C9463;
+    background-color: #10a37f;
     border: none;
     color: white;
     padding: 15px;
@@ -23,8 +22,8 @@ body{
     display: inline-block;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 7px;
-    width: 15rem;
+    border-radius: 5px;
+    width: 16rem;
 }
 
 .predict_crop_btn:hover {
@@ -42,7 +41,7 @@ body{
     display: inline-grid;    
     grid-template-columns: 250px 250px;
     column-gap: 50px;
-   row-gap: 30px;
+   row-gap: 40px;
 }
 
 

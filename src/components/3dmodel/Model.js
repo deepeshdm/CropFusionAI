@@ -67,7 +67,7 @@ const ThreeApp = (props) => {
     <Canvas onCreated={state => state.gl.setClearAlpha(alpha)} >
       <PerspectiveCamera makeDefault position={[0, 4.5, 8.5]} />
       {/* <axesHelper args={[20]} /> */}
-      <Sparkles count={200} size={3} scale={7} position={[-3, 1, 4]} color={0xFFA500} />
+      <Sparkles count={230} size={4} scale={12} position={[-3, 1, 4]} color={0xFFA500} />
       <OrbitControls minPolarAngle={0.5} maxPolarAngle={1.5} />
       <Light />
       <FarmLight />

@@ -1,39 +1,46 @@
 .header {
-    display: flex;
-    justify-content: flex-end; /* shift the links to the right */
-    align-items: center;
-    background-color: #0C9463;
-    padding: 0.1rem;  /* width of the header */
-  }
+  display: flex;
+  justify-content: flex-end; /* shift the links to the right */
+  align-items: center;
+  background-color: #10a37f;
+  padding: 0.07rem; /* width of the header */
+}
 
-  .header .logo {
-    font-weight: bold;
-    font-size:x-large;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-right: auto; /* push the logo to the left */
-    margin-left: 2rem;
-  }
-  
-  .header ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    margin-right: 10rem;
-    padding: 0.5rem;
-  }
-  
-  .header li {
-    margin: 0 2.5rem; /* increase the spacing between the links */
-    font-weight: 500;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  
-  .header a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .header a:hover {
-    color: #ccc;
-  }
-  
+.header .logo {
+  font-weight: 480;
+  font-size: x-large;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-right: auto; /* push the logo to the left */
+  margin-left: 2rem;
+}
+
+.header ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  margin-right: 10rem;
+  padding: 0.5rem;
+}
+
+.header li {
+  margin: 0 2.5rem; /* increase the spacing between the links */
+  font-weight: 450;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header a:hover {
+  font-weight: 600;
+}
+
+/* Don't change logo color on hover */
+.header .logo :hover {
+  color: #fff;
+  font-weight: 450;
+}

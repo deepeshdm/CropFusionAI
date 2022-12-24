@@ -18,7 +18,7 @@
 }
 
 .crop-try-btn{
-    background-color: #0C9463;
+    background-color: #10a37f;
     border: none;
     color: white;
     padding: 15px;
@@ -27,7 +27,7 @@
     display: inline-block;
     font-size: 16px;
     font-weight: bolder;
-    border-radius: 7px;
+    border-radius: 5px;
     width: 10rem;
     margin-left: 45%;
     margin-top: 1%;

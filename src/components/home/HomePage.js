@@ -18,26 +18,27 @@ function HomePage(props) {
     const navigate = useNavigate()
 
     return (
-        <div className="homepage">
+        <>
             <Header className="header" />
+            <div>
+                <p className="question"> What Crop to grow this Season ? </p>
+                <p className="description">
+                    Welcome to CropFusionAI, where we put the "AI" in "farming".
+                    We help farmers make the tough decisions,
+                    like whether to plant corn or lettuce this season. Don't worry, our advanced
+                    machine learning models have got you covered.
+                    Just sit back, relax, and  let us do the thinking for you.
+                    And if you're feeling adventurous, our fertilizer recommendation
+                    feature will even help you spice things up in the garden.
+                    Start using CropFusionAI  today and let the robots handle the dirty work!
+                </p>
+                <button className="start_btn" onClick={() => navigate("/crop")}> GET STARTED </button>
 
-            <p className="question"> What Crop to grow this Season ? </p>
-            <p className="description">
-                Welcome to CropFusionAI, where we put the "AI" in "farming".
-                We help farmers make the tough decisions,
-                like whether to plant corn or lettuce this season. Don't worry, our advanced
-                machine learning models have got you covered.
-                Just sit back, relax, and  let us do the thinking for you.
-                And if you're feeling adventurous, our fertilizer recommendation
-                feature will even help you spice things up in the garden.
-                Start using CropFusionAI  today and let the robots handle the dirty work!
-            </p>
-            <button className="start_btn" onClick={() => navigate("/crop")}> GET STARTED </button>
-
-            <div className="container">
-            {props.children}
+                <div className="container">
+                    {props.children}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
@@ -60,12 +61,12 @@ export function ModelLoader() {
         // Load 3D model
         loader.load(model_path, (model) => {
 
-            const bg = ()=>{
-                return(
+            const bg = () => {
+                return (
                     <>
-                     <HomePage>
-                     <Background3D model={model} />
-                     </HomePage>
+                        <HomePage>
+                            <Background3D model={model} />
+                        </HomePage>
                     </>
                 )
             }
@@ -93,10 +94,10 @@ export function ModelLoader() {
         );
     }
 
-     // Show Home page if model is loaded.
+    // Show Home page if model is loaded.
     return (
         <>
-           {bg}
+            {bg}
         </>
     );
 }

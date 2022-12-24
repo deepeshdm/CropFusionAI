@@ -1,6 +1,4 @@
 
-
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./Header.css"
@@ -8,11 +6,8 @@ import "./Header.css"
 const Header = () => {
     return (
         <div className="header">
-            <div className="logo"> <Link to="/"> CropFusionAI 🌾 </Link> </div>
+            <div className="logo"> <Link to="/"> 🌿 CropFusionAI </Link> </div>
             <ul>
-            <li>
-                    <Link to="/"> Home </Link>
-                </li>
                 <li>
                     <Link to="/crop">Crop Recommendation </Link>
                 </li>
@@ -31,6 +26,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-
