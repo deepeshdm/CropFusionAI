@@ -8,19 +8,19 @@ import { output_descriptions } from "./CropOutputs"
 
 //--------------------------------------------------------------------
 
+// list of all the input elements
+const inputElements = [
+    document.getElementById('nitrogen-crop-input'),
+    document.getElementById('temp-crop-input'),
+    document.getElementById('phosphorous-crop-input'),
+    document.getElementById('humidity-crop-input'),
+    document.getElementById('potassium-crop-input'),
+    document.getElementById('ph-crop-input'),
+    document.getElementById('rainfall-crop-input'),
+];
+
 // Focus on Empty Input fields
 function focusEmptyFields() {
-
-    // list of all the input elements
-    const inputElements = [
-        document.getElementById('nitrogen-crop-input'),
-        document.getElementById('temp-crop-input'),
-        document.getElementById('phosphorous-crop-input'),
-        document.getElementById('humidity-crop-input'),
-        document.getElementById('potassium-crop-input'),
-        document.getElementById('ph-crop-input'),
-        document.getElementById('rainfall-crop-input'),
-    ];
 
     // Check if any of the input fields is empty & focus on it
     for (let i = 0; i < inputElements.length; i++) {
@@ -35,11 +35,44 @@ function focusEmptyFields() {
 
 //--------------------------------------------------------------------
 
+
+function inputRangeValidator(Temperature, Humid) {
+
+    // Min-Max values of crop inputs
+    const crop_value_ranges = {
+        nitrogen: [0, 150], phosphorous: [5, 145], potassium: [5, 205], temperature: [0, 50],
+        humidity: [1, 100], ph: [3, 10], rainfall: [20, 300]
+    }
+
+    const min_temp = crop_value_ranges.temperature[0]
+    const max_temp = crop_value_ranges.temperature[1]
+    if (Temperature < min_temp || Temperature > max_temp) {
+        window.alert("Temperature must be between 0-50 celcius !")
+        inputElements[1].focus();
+        return 0;
+    }
+
+    const min_humid = crop_value_ranges.humidity[0]
+    const max_humid = crop_value_ranges.humidity[1]
+    if (Humid < min_humid || Humid > max_humid) {
+        window.alert("Humidity % should be between 1-100 !")
+        inputElements[1].focus();
+        return 0;
+    }
+
+    return 1;
+
+}
+
+
+//--------------------------------------------------------------------
+
 const CROP_ENDPOINT = 'https://8080-797137136eb6451193a1f8c64a951490.patr.cloud/crop_recommend'
+
 
 function handleClick(navigate) {
 
-    // Continue only if all fields are non-empty
+    // Continue only if all fields are filled.
     const isFieldEmpty = focusEmptyFields();
     if (isFieldEmpty == 0) {
         console.log("Some Inputs are empty !")
@@ -55,6 +88,10 @@ function handleClick(navigate) {
     const phValue = document.getElementById('ph-crop-input').value;
     const rainfallValue = document.getElementById('rainfall-crop-input').value;
 
+    // Check if the Input values are in required ranges
+    if (inputRangeValidator(tempValue, humidityValue) == 0) { return; }
+
+
     const data = {
         array: [nitrogenValue, phosphorousValue, potassiumValue,
             tempValue, humidityValue, phValue, rainfallValue]
@@ -64,7 +101,7 @@ function handleClick(navigate) {
     fetch(CROP_ENDPOINT, {
         method: 'POST',
         body: JSON.stringify(data),
-        headers: {'Content-Type': 'application/json'}
+        headers: { 'Content-Type': 'application/json' }
     })
         .then(response => response.json())
         .then(data => {
@@ -72,7 +109,7 @@ function handleClick(navigate) {
             console.log(output_descriptions[data])
 
             // Redirect to Result page along with predicted crop
-            navigate("/crop_result",{state:{ predicted_crop: data}})
+            navigate("/crop_result", { state: { predicted_crop: data } })
 
 
         }).catch(error => {
@@ -82,13 +119,6 @@ function handleClick(navigate) {
 }
 
 //--------------------------------------------------------------------
-
-// Min-Max values of crop inputs
-const crop_value_ranges = {
-    nitrogen: [0, 140], phosphorous: [5, 145],
-    potassium: [5, 205], temperature: [5, 50],
-    humidity: [14, 100], ph: [3, 10], rainfall: [20, 300]
-}
 
 export function CropPage() {
 
@@ -106,7 +136,7 @@ export function CropPage() {
                 <TextField id="potassium-crop-input" label="Ratio of Potassium" variant="outlined" color="success" type="number" />
                 <TextField id="ph-crop-input" label="PH Level of soil" variant="outlined" color="success" type="number" />
                 <TextField id="rainfall-crop-input" label="Rainfall in Milimeter (mm)" variant="outlined" color="success" type="number" />
-                <button className="predict_crop_btn" onClick={()=> handleClick(navigate)}> PREDICT </button>
+                <button className="predict_crop_btn" onClick={() => handleClick(navigate)}> PREDICT </button>
             </div>
         </>
     )
