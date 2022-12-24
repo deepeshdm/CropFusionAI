@@ -47,16 +47,14 @@ function inputRangeValidator(Temperature, Humid) {
     const min_temp = crop_value_ranges.temperature[0]
     const max_temp = crop_value_ranges.temperature[1]
     if (Temperature < min_temp || Temperature > max_temp) {
-        window.alert("Temperature must be between 0-50 celcius !")
-        inputElements[1].focus();
+        window.alert("Temperature must be between 0-50 celcius !");
         return 0;
     }
 
     const min_humid = crop_value_ranges.humidity[0]
     const max_humid = crop_value_ranges.humidity[1]
     if (Humid < min_humid || Humid > max_humid) {
-        window.alert("Humidity % should be between 1-100 !")
-        inputElements[1].focus();
+        window.alert("Humidity % should be between 1-100 !");
         return 0;
     }
 
