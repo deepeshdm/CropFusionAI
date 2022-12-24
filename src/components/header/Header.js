@@ -9,14 +9,13 @@ const Header = () => {
             <div className="logo"> <Link to="/"> 🌿 CropFusionAI </Link> </div>
             <ul>
                 <li>
-                    <Link to="/crop" className="crop-header-option" >Crop Recommendation </Link>
+                    <Link to="/crop">Crop Recommendation </Link>
                 </li>
                 <li>
-                    <Link to="/fertilizer" className="fertilizer-header-option"> Fertilizer Recommendation </Link>
+                    <Link to="/fertilizer"> Fertilizer Recommendation </Link>
                 </li>
                 <li>
-                    <Link to="#" className="project-header-option" 
-                    onClick={() => { window.open('https://github.com/deepeshdm/CropFusionAI-Frontend', '_blank'); }}>
+                    <Link to="#" onClick={() => { window.open('https://github.com/deepeshdm/CropFusionAI-Frontend', '_blank'); }}>
                         Project
                     </Link>
                 </li>

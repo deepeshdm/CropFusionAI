@@ -33,39 +33,16 @@ function focusEmptyFields() {
     return 1;
 }
 
-//--------------------------------------------------------------------
-
-
-function inputRangeValidator(Temperature, Humid) {
-
-    // Min-Max values of crop inputs
-    const crop_value_ranges = {
-        nitrogen: [0, 150], phosphorous: [5, 145], potassium: [5, 205], temperature: [0, 50],
-        humidity: [1, 100], ph: [3, 10], rainfall: [20, 300]
-    }
-
-    const min_temp = crop_value_ranges.temperature[0]
-    const max_temp = crop_value_ranges.temperature[1]
-    if (Temperature < min_temp || Temperature > max_temp) {
-        window.alert("Temperature must be between 0-50 celcius !");
-        return 0;
-    }
-
-    const min_humid = crop_value_ranges.humidity[0]
-    const max_humid = crop_value_ranges.humidity[1]
-    if (Humid < min_humid || Humid > max_humid) {
-        window.alert("Humidity % should be between 1-100 !");
-        return 0;
-    }
-
-    return 1;
-
-}
-
 
 //--------------------------------------------------------------------
 
 const CROP_ENDPOINT = 'https://8080-797137136eb6451193a1f8c64a951490.patr.cloud/crop_recommend'
+
+// Min-Max values of crop inputs
+const crop_value_ranges = {
+    nitrogen: [0, 150], phosphorous: [5, 145], potassium: [5, 205], temperature: [0, 50],
+    humidity: [1, 100], ph: [3, 10], rainfall: [20, 300]
+}
 
 
 function handleClick(navigate) {
@@ -86,8 +63,19 @@ function handleClick(navigate) {
     const phValue = document.getElementById('ph-crop-input').value;
     const rainfallValue = document.getElementById('rainfall-crop-input').value;
 
+
     // Check if the Input values are in required ranges
-    if (inputRangeValidator(tempValue, humidityValue) == 0) { return; }
+    const min_temp = crop_value_ranges.temperature[0]
+    const max_temp = crop_value_ranges.temperature[1]
+    const min_humid = crop_value_ranges.humidity[0]
+    const max_humid = crop_value_ranges.humidity[1]
+    if (tempValue < min_temp || tempValue > max_temp) {
+        window.alert("Temperature must be between 0-50 celcius !");
+        return;
+    } else if (humidityValue < min_humid || humidityValue > max_humid) {
+        window.alert(" Humidity must be between 1-100 !");
+        return;
+    }
 
 
     const data = {
