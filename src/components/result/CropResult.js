@@ -14,17 +14,17 @@ export function CropResult() {
 
     // Runs at Initial Render. Redirects if State is null.
     useEffect(() => {
-        if(locationState==null){
+        if (locationState == null) {
             console.log("Redirecting to /crop...")
             navigate("/crop")
         }
     }, [locationState, navigate]);
 
-    if(locationState==null){
+    if (locationState == null) {
         console.log("LocationState is null")
         return null;
     }
-    
+
     const predicted_crop = locationState["predicted_crop"];
     const output_image_path = label_image_paths[predicted_crop];
     console.log('Image Path : ', output_image_path)
@@ -32,10 +32,12 @@ export function CropResult() {
     return (
         <>
             <Header />
-            <p className="crop-result-p"> You should grow <b> {predicted_crop.toUpperCase()} </b> in your farm !</p>
-            <img className="crop-result-img" src={output_image_path}  />
-            <p className="crop-result-description"> {output_descriptions[predicted_crop]} </p>
-            <button className="crop-try-btn" onClick={() => navigate("/crop")}> Try again ? </button>
+            <div className="crop-result-container">
+                <p className="crop-result-p"> You should grow <b> {predicted_crop.toUpperCase()} </b> in your farm ! 😋</p>
+                <img className="crop-result-img" src={output_image_path} />
+                <p className="crop-result-description"> {output_descriptions[predicted_crop]} </p>
+                <button className="crop-try-btn" onClick={() => navigate("/crop")}> Try again ? </button>
+            </div>
         </>
     );
 }

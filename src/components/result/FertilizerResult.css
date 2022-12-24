@@ -3,17 +3,17 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: x-large;
-  margin-left: 37%;
-  margin-top: 2%;
+  margin-left: 34%;
+  margin-top: 1.5%;
 }
 
 .fertilizer-result-description {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1.2rem;
-  font-weight: 320;
-  margin-left: 15%;
-  margin-right: 15%;
+  font-weight: 330;
+  margin-left: 5%;
+  margin-right: 5%;
   text-align: center;
 }
 
@@ -26,11 +26,10 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  font-weight: bolder;
+  font-weight: 600px;
   border-radius: 5px;
   width: 10rem;
   margin-left: 45%;
-  margin-top: 1%;
 }
 
 .fertilizer-try-btn:hover {
@@ -42,7 +41,7 @@
 }
 
 .fertilizer-result-img {
-  max-width: 20%;
-  margin-left: 40%;
+  max-width: 24%;
+  margin-left: 38%;
   border-radius: 5px;
 }
