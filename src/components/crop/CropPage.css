@@ -44,7 +44,7 @@ body {
 /*-----------------------------------------------------------*/
 
 /* CSS for width between 410p-780x */
-@media (310px <= width <= 760px) {
+@media (320px <= width <= 760px) {
 
   .crop-p {
     font-size: small;

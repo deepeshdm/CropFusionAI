@@ -52,7 +52,7 @@
 /*-----------------------------------------------------------*/
 
   /* CSS for width between 410p-780x */
-  @media ( 410px <= width <= 760px ) {
+  @media ( 320px <= width <= 760px ) {
     
     /* Hide the Project option*/
     .project-header-option{
