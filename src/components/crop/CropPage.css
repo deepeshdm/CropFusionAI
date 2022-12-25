@@ -49,9 +49,10 @@ body {
   .crop-p {
     font-size: large;
     text-align: center;
-    width: 80%;
+    width: 83%;
     margin: 0;
-    margin-left: 13%;
+    margin-right: 12%;
+    margin-left: 10%;
     margin-top: 10%;
   }
 
@@ -62,7 +63,8 @@ body {
     row-gap: 10px;
     margin-top: 5%;
     margin-bottom: 15%;
-    margin-left: 14%;
+    margin-right: 21%;
+    margin-left: 20%;
     width: min-content;
   }
 
