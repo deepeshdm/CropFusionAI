@@ -3,7 +3,8 @@
   justify-content: flex-end; /* shift the links to the right */
   align-items: center;
   background-color: rgb(99, 0, 99);
-  padding: 0.07rem; /* width of the header */
+  padding-bottom: 0.07rem; /* height of the header */
+  width: 100vw;
 }
 
 .header .logo {
@@ -19,8 +20,9 @@
   display: flex;
   list-style: none;
   margin: 0;
-  margin-right: 10rem;
-  padding: 0.5rem;
+  margin-right: 5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.6rem;
 }
 
 .header li {
@@ -44,3 +46,60 @@
   color: #fff;
   font-weight: 450;
 }
+
+
+
+/*-----------------------------------------------------------*/
+
+  /* CSS for width between 410p-780x */
+  @media ( 410px <= width <= 760px ) {
+    
+    /* Hide the Project option*/
+    .project-header-option{
+      display: none;
+    }
+
+    .header {
+      background-color: rgb(0, 99, 8);
+      width:min-content;
+    }
+    
+    .header .logo ,  .header li {
+      font-size: small;
+    }
+    
+    .header .logo, .header ul,  .header li {
+      margin: 0;
+      padding:0;
+    }
+
+    .header{
+      padding-left: 5%;
+      padding-right: 20%;
+      padding-bottom: 1%;
+      padding-top: 1%;
+    }
+
+    .header li{
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+
+    .fertilizer-header-option{
+     padding-right: 0;
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
