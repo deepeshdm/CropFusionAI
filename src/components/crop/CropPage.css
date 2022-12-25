@@ -43,9 +43,8 @@ body {
 
 /*-----------------------------------------------------------*/
 
-  /* CSS for width between 220-415px */
-  @media ( 220px <= width <= 415px ) {
-
+/* CSS for width between 220-415px */
+@media (220px <= width <= 415px) {
   .crop-p {
     font-size: large;
     text-align: center;
@@ -71,29 +70,4 @@ body {
   .predict_crop_btn {
     margin-top: 5%;
   }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

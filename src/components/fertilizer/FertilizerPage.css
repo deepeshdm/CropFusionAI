@@ -41,3 +41,35 @@ body {
   column-gap: 50px;
   row-gap: 40px;
 }
+
+/*-----------------------------------------------------------*/
+
+/* CSS for width between 220-415px */
+@media (220px <= width <= 415px) {
+  .fertilizer-p {
+    font-size: large;
+    text-align: center;
+    width: 86%;
+    margin: 0;
+    margin-right: 15%;
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+
+  .fertilizer-container {
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 5%;
+    margin-bottom: 30%;
+    margin-right: 0%;
+    margin-left: 26%;
+    width: min-content;
+  }
+
+  .predict_fertilizer_btn {
+    margin: 0;
+    margin-top: 5%;
+  }
+}
