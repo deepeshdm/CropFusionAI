@@ -8,19 +8,19 @@ import { output_descriptions } from "./CropOutputs"
 
 //--------------------------------------------------------------------
 
-// list of all the input elements
-const inputElements = [
-    document.getElementById('nitrogen-crop-input'),
-    document.getElementById('temp-crop-input'),
-    document.getElementById('phosphorous-crop-input'),
-    document.getElementById('humidity-crop-input'),
-    document.getElementById('potassium-crop-input'),
-    document.getElementById('ph-crop-input'),
-    document.getElementById('rainfall-crop-input'),
-];
-
 // Focus on Empty Input fields
 function focusEmptyFields() {
+
+    // list of all the input elements
+    const inputElements = [
+        document.getElementById('nitrogen-crop-input'),
+        document.getElementById('temp-crop-input'),
+        document.getElementById('phosphorous-crop-input'),
+        document.getElementById('humidity-crop-input'),
+        document.getElementById('potassium-crop-input'),
+        document.getElementById('ph-crop-input'),
+        document.getElementById('rainfall-crop-input'),
+    ];
 
     // Check if any of the input fields is empty & focus on it
     for (let i = 0; i < inputElements.length; i++) {
@@ -77,7 +77,7 @@ function handleClick(navigate) {
         return;
     }
 
-
+    // JSON payload
     const data = {
         array: [nitrogenValue, phosphorousValue, potassiumValue,
             tempValue, humidityValue, phValue, rainfallValue]
