@@ -10,6 +10,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { output_descriptions } from "./FertilizerOutputs.js";
 import { useNavigate } from "react-router-dom";
+import { crop_value_ranges } from "../crop/CropPage.js";
 
 var soilTypeVal = ""
 var cropTypeVal = ""
@@ -140,7 +141,21 @@ function handleClick(navigate) {
     const potassiumValue = document.getElementById('potassium-fertilizer-input').value;
     const moistureValue = document.getElementById('moisture-fertilizer-input').value;
 
-    // Display all the values in a single alert window
+     // Check if the Input values are in required ranges
+     const min_temp = crop_value_ranges.temperature[0]
+     const max_temp = crop_value_ranges.temperature[1]
+     const min_humid = crop_value_ranges.humidity[0]
+     const max_humid = crop_value_ranges.humidity[1]
+     if (tempValue < min_temp || tempValue > max_temp) {
+         window.alert("Temperature must be between 0-50 celcius !");
+         return;
+     } else if (humidityValue < min_humid || humidityValue > max_humid) {
+         window.alert(" Humidity must be between 1-100 !");
+         return;
+     }
+     
+
+    // JSON payload
     const data = {
         array: [tempValue, humidityValue, moistureValue, nitrogenValue, potassiumValue,
             phosphorousValue, soilTypeVal, cropTypeVal]
