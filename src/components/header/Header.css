@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-end; /* shift the links to the right */
   align-items: center;
-  background-color: #10a37f;
+  background-color: rgb(99, 0, 99);
   padding: 0.07rem; /* width of the header */
 }
 
