@@ -43,8 +43,8 @@ body {
 
 /*------------------------------------------------------------------------*/
 
-/* CSS for width between 220-415px */
-@media (220px <= width <= 415px) {
+/* CSS for width between 220-780px */
+@media (220px <= width <= 780px) {
   .crop-p {
     font-size: large;
     text-align: center;
@@ -76,34 +76,64 @@ body {
 
 /* CSS for width between 415-780px */
 @media (415px <= width <= 780px) {
-  
   .crop-p {
-    font-size: large;
-    text-align: center;
-    width: 83%;
-    margin: 0;
-    margin-right: 12%;
-    margin-left: 10%;
-    margin-top: 10%;
+    font-size: x-large;
+    margin-left: 22%;
   }
 
   .crop-container {
-    display: flex;
-    flex-direction: column;
-    column-gap: 10px;
-    row-gap: 10px;
-    margin-top: 5%;
-    margin-bottom: 15%;
-    margin-right: 21%;
-    margin-left: 20%;
-    width: min-content;
-  }
-
-  .predict_crop_btn {
-    margin-top: 5%;
+    margin-left: 38%;
+    max-width: max-content;
   }
 }
 
+/* CSS for width between 575-630px */
+@media (575px <= width <= 630px) {
+  .crop-p {
+    margin-left: 17%;
+  }
+}
 
+/* CSS for width between 630-780px */
+@media (630px <= width <= 780px) {
+  .crop-p {
+    margin-right: 13%;
+    margin-left: 13%;
+  }
 
+  .crop-container {
+    margin-left: 35%;
+  }
+}
 
+/*------------------------------------------------------------------------*/
+
+/* CSS for width between 780-975px */
+@media (780px <= width <= 975px) {
+  .crop-p {
+    margin-right: 10%;
+    margin-left: 15%;
+    text-align: center;
+  }
+
+  .crop-container {
+    margin: 0;
+    padding: 0;
+    margin-left: 18%;
+  }
+}
+
+/* CSS for width between 910-1250px */
+@media (910px <= width <= 1250px) {
+  .crop-p {
+    margin-right: 10%;
+    margin-left: 15%;
+    text-align: center;
+  }
+
+  .crop-container {
+    margin: 0;
+    padding: 0;
+    margin-left: 25%;
+  }
+}
