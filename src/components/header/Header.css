@@ -1,3 +1,4 @@
+
 .header {
   display: flex;
   justify-content: flex-end; /* shift the links to the right */
@@ -30,6 +31,7 @@
   font-weight: 450;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
 }
 
 .header a {
@@ -47,7 +49,7 @@
   font-weight: 450;
 }
 
-/*-----------------------------------------------------------*/
+/*------------------------------------------------------------------------*/
 
 /* CSS for width between 220-415px */
 @media (220px <= width <= 415px) {
@@ -68,6 +70,7 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
       Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
       sans-serif;
+    text-align: center;
   }
 
   .header .logo,
@@ -81,6 +84,10 @@
       sans-serif;
   }
 
+  .header .logo {
+    padding-right: 7%;
+  }
+
   .header {
     padding-left: 8.5%;
     padding-right: 24%;
@@ -92,5 +99,72 @@
   .header li {
     padding-left: 10%;
     padding-right: 10%;
+  }
+}
+
+/*------------------------------------------------------------------------*/
+
+/* CSS for width between 415px and 760px */
+@media (415px <= width <= 760px) {
+  /* Hide the Project option*/
+  .project-header-option {
+    display: none;
+  }
+
+  .header {
+    background-color: rgb(99, 0, 99);
+    max-width: max-content;
+  }
+
+  .header .logo,
+  .header li {
+    font-size: larger;
+    font-weight: 450;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+
+  .header .logo,
+  .header ul,
+  .header li {
+    margin: 0;
+    padding: 0;
+    font-weight: 450;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    text-align: center;
+  }
+
+  .header .logo {
+    padding-left: 3%;
+    padding-right: 5%;
+  }
+
+  .header {
+    padding-left: 8.5%;
+    padding-right: 18%;
+    padding-bottom: 3%;
+    padding-top: 1%;
+    overflow-x: hidden;
+  }
+
+  .header li {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .crop-header-option {
+    padding: 0;
+  }
+}
+
+/*------------------------------------------------------------------------*/
+
+/* CSS for width between 415px and 480px */
+@media (415px <= width <= 480px) {
+  .header li {
+    padding-left: 5%;
   }
 }

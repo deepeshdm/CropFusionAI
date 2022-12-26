@@ -41,7 +41,7 @@ body {
   row-gap: 40px;
 }
 
-/*-----------------------------------------------------------*/
+/*------------------------------------------------------------------------*/
 
 /* CSS for width between 220-415px */
 @media (220px <= width <= 415px) {
@@ -71,3 +71,39 @@ body {
     margin-top: 5%;
   }
 }
+
+/*------------------------------------------------------------------------*/
+
+/* CSS for width between 415-780px */
+@media (415px <= width <= 780px) {
+  
+  .crop-p {
+    font-size: large;
+    text-align: center;
+    width: 83%;
+    margin: 0;
+    margin-right: 12%;
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+
+  .crop-container {
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    margin-right: 21%;
+    margin-left: 20%;
+    width: min-content;
+  }
+
+  .predict_crop_btn {
+    margin-top: 5%;
+  }
+}
+
+
+
+
