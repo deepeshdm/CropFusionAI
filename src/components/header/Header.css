@@ -1,4 +1,3 @@
-
 .header {
   display: flex;
   justify-content: flex-end; /* shift the links to the right */
@@ -160,11 +159,33 @@
   }
 }
 
-/*------------------------------------------------------------------------*/
-
 /* CSS for width between 415px and 480px */
 @media (415px <= width <= 480px) {
   .header li {
     padding-left: 5%;
+  }
+}
+
+/*------------------------------------------------------------------------*/
+
+/* CSS for width between 760-975px */
+@media (760px <= width <= 975px) {
+  /* Hide the Project option*/
+  .project-header-option {
+    display: none;
+  }
+
+  .header ul {
+    padding: 0;
+    margin: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+}
+
+/* CSS for width between 780-820px */
+@media (780px <= width <= 820px) {
+  .header {
+    padding-left: 1%;
   }
 }
