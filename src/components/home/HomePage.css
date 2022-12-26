@@ -4,6 +4,7 @@
   top: 0;
   left: 0;
   background-color: rgb(15, 15, 15);
+  width: 100vw;
 }
 
 .question {
@@ -50,4 +51,98 @@
 
 .start_btn:active {
   transform: scale(0.95, 0.95);
+}
+
+/*------------------------------------------------------------------------*/
+
+/* CSS for width above 830px */
+@media (width < 830px) {
+
+  /* At 830px of Width, Hide the 3D model on smaller screens */
+  .container {
+    display: none;
+  }
+
+  .description {
+    color: black;
+  }
+
+  .question {
+    color: black;
+  }
+}
+
+/*------------------------------------------------------------------------*/
+
+@media (250px <= width <= 830px) {
+  .question {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    margin-left: 15%;
+    margin-top: 15%;
+    margin-right: 8%;
+    text-align: center;
+  }
+
+  .description {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    margin-left: 13%;
+    margin-right: 8%;
+    margin-top: 7%;
+  }
+
+  .start_btn {
+    margin: 0;
+    margin-top: 10%;
+    margin-left: 25%;
+  }
+}
+
+@media (250px <= width <= 350px) {
+  .description {
+    font-size: 1rem;
+    margin-left: 28%;
+    margin-right: 8%;
+    margin-top: 7%;
+  }
+
+  .question {
+    margin-left: 25%;
+    margin-right: 8%;
+  }
+}
+
+@media (415px <= width <= 830px) {
+  .question {
+    font-size: 2rem;
+    margin-left: 28%;
+    margin-right: 8%;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    margin-left: 25%;
+    margin-right: 5%;
+    margin-top: 7%;
+  }
+
+  .start_btn {
+    margin: 0;
+    margin-top: 10%;
+    margin-left: 38%;
+  }
+}
+
+@media (680px <= width <= 830px) {
+  .question {
+    margin-left: 17%;
+  }
+
+  .description {
+    margin-left: 10%;
+    margin-right: 5%;
+  }
 }
