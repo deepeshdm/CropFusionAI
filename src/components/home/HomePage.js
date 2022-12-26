@@ -42,19 +42,13 @@ function HomePage(props) {
     )
 }
 
+
 //------------------------------------------------------------------------------------------
 
 export function ModelLoader() {
 
     const [isLoading, setIsLoading] = useState(true);
     const [bg, setBg] = useState(null);
-
-    // Spinner CSS
-    const override = {
-        display: "block",
-        margin: "0 auto",
-        marginTop: "15%"
-    };
 
     useEffect(() => {
         const loader = new GLTFLoader();
@@ -76,20 +70,27 @@ export function ModelLoader() {
         });
     }, []);
 
+    // Spinner CSS
+    const override = {
+        display: "block",
+        margin: "0 auto",
+        marginTop: "18%"
+    };
+
     // Show Loading page if model is not loaded.
     if (isLoading == true) {
         return (
             <div>
                 <Header className="header" />
                 <HashLoader
+                    className="spinner"
                     color={"#0C9463"}
                     loading={true}
                     cssOverride={override}
                     size={80}
-                    aria-label="Loading Spinner"
+                    aria-label="Loading..."
                     data-testid="loader"
                 />
-                <h1 className="spinner-status"> Please wait... </h1>
             </div>
         );
     }
