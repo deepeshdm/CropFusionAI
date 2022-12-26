@@ -15,7 +15,7 @@ const Header = () => {
                     <Link to="/fertilizer"> Fertilizer Recommendation </Link>
                 </li>
                 <li className="project-header-option">
-                    <Link to="#" onClick={() => { window.open('https://github.com/deepeshdm/CropFusionAI-Frontend', '_blank'); }}>
+                    <Link to="#" onClick={() => { window.open('https://github.com/deepeshdm/CropFusionAI', '_blank'); }}>
                         Project
                     </Link>
                 </li>
