@@ -110,6 +110,13 @@ export function CropPage() {
 
     const navigate = useNavigate();
 
+    // Called when Enter is pressed
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            handleClick(navigate)
+        }
+    });
+
     return (
         <>
             <Header />

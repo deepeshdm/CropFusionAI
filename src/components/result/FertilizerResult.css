@@ -1,3 +1,8 @@
+
+body{
+  overflow-x: hidden;  /* Hide Scrollbars on X-axis*/
+}
+
 .fertilizer-result-p {
   color: black;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,

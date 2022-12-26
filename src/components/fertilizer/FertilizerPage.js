@@ -141,19 +141,19 @@ function handleClick(navigate) {
     const potassiumValue = document.getElementById('potassium-fertilizer-input').value;
     const moistureValue = document.getElementById('moisture-fertilizer-input').value;
 
-     // Check if the Input values are in required ranges
-     const min_temp = crop_value_ranges.temperature[0]
-     const max_temp = crop_value_ranges.temperature[1]
-     const min_humid = crop_value_ranges.humidity[0]
-     const max_humid = crop_value_ranges.humidity[1]
-     if (tempValue < min_temp || tempValue > max_temp) {
-         window.alert("Temperature must be between 0-50 celcius !");
-         return;
-     } else if (humidityValue < min_humid || humidityValue > max_humid) {
-         window.alert(" Humidity must be between 1-100 !");
-         return;
-     }
-     
+    // Check if the Input values are in required ranges
+    const min_temp = crop_value_ranges.temperature[0]
+    const max_temp = crop_value_ranges.temperature[1]
+    const min_humid = crop_value_ranges.humidity[0]
+    const max_humid = crop_value_ranges.humidity[1]
+    if (tempValue < min_temp || tempValue > max_temp) {
+        window.alert("Temperature must be between 0-50 celcius !");
+        return;
+    } else if (humidityValue < min_humid || humidityValue > max_humid) {
+        window.alert(" Humidity must be between 1-100 !");
+        return;
+    }
+
 
     // JSON payload
     const data = {
@@ -188,6 +188,13 @@ function handleClick(navigate) {
 export function FertilizerPage() {
 
     const navigate = useNavigate();
+
+    // Called when Enter is pressed
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            handleClick(navigate)
+        }
+    });
 
     return (
         <>
