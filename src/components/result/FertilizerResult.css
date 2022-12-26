@@ -3,8 +3,9 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: x-large;
-  margin-left: 37%;
+  margin-left: 5%;
   margin-top: 2%;
+  text-align: center;
 }
 
 .fertilizer-result-description {
@@ -27,10 +28,11 @@
   display: inline-block;
   font-size: 16px;
   font-weight: bolder;
-  border-radius: 5px;
+  border-radius: 3px;
   width: 10rem;
   margin-left: 45%;
   margin-top: 1%;
+  margin-bottom: 5%;
 }
 
 .fertilizer-try-btn:hover {
@@ -44,5 +46,160 @@
 .fertilizer-result-img {
   max-width: 20%;
   margin-left: 40%;
-  border-radius: 5px;
+  border-radius: 3px;
+}
+
+/*------------------------------------------------------------------------*/
+
+/* CSS for width between 350-415px */
+@media (350px <= width <= 415px) {
+  .fertilizer-result-p {
+    font-size: larger;
+    margin-top: 8%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: fit-content;
+  }
+
+  .fertilizer-result-img {
+    max-width: 80%;
+    margin-left: 12%;
+    border-radius: 3px;
+  }
+
+  .fertilizer-result-description {
+    font-size: 0.9rem;
+    max-width: fit-content;
+    margin-right: 10%;
+    margin-left: 13%;
+  }
+
+  .fertilizer-try-btn {
+    margin-left: 35%;
+  }
+}
+
+/*------------------------------------------------------------------------*/
+
+/* CSS for width between 415-815px */
+@media (415px <= width <= 815px) {
+  .fertilizer-result-p {
+    font-size: x-larger;
+    margin-top: 8%;
+    margin-left: 25%;
+  }
+
+  .fertilizer-result-img {
+    max-width: 80%;
+    margin-left: 25%;
+    border-radius: 3px;
+  }
+
+  .fertilizer-result-description {
+    font-size: large;
+    margin: 0%;
+    margin-left: 24%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .fertilizer-try-btn {
+    margin-left: 45%;
+  }
+}
+
+/* CSS for width between 560-620px */
+@media (560px <= width <= 620px) {
+  .fertilizer-result-p {
+    margin-left: 20%;
+  }
+
+  .fertilizer-result-img {
+    max-width: 80%;
+    margin-left: 23%;
+    border-radius: 3px;
+  }
+
+  .fertilizer-result-description {
+    font-size: large;
+    margin: 0%;
+    margin-left: 23%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .fertilizer-try-btn {
+    margin-left: 45%;
+  }
+}
+
+/*------------------------------------------------------------------------*/
+
+/* CSS for width between 620-815 */
+@media (620px <= width <= 815px) {
+  .fertilizer-result-p {
+    margin-left: 20%;
+  }
+
+  .fertilizer-result-img {
+    max-width: 80%;
+    margin-left: 20%;
+    border-radius: 3px;
+  }
+
+  .fertilizer-result-description {
+    font-size: large;
+    margin: 0%;
+    margin-left: 18%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .fertilizer-try-btn {
+    margin-left: 45%;
+  }
+}
+
+/* CSS for width between 670-915px */
+@media (670px <= width <= 915px) {
+  .fertilizer-result-p {
+    margin-left: 8%;
+  }
+
+  .fertilizer-result-img {
+    max-width: 80%;
+    margin-left: 12%;
+    border-radius: 3px;
+  }
+
+  .fertilizer-result-description {
+    font-size: large;
+    margin: 0%;
+    margin-left: 13%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .fertilizer-try-btn {
+    margin-left: 40%;
+  }
+}
+
+/* CSS for width between 815px-915px */
+@media (815px <= width <= 915px) {
+  .fertilizer-result-img {
+    max-width: 80%;
+    margin-left: 12%;
+    border-radius: 3px;
+  }
+}
+
+/* CSS for width between 915-1200 */
+@media (915px <= width <= 1200px) {
+  .fertilizer-result-img {
+    max-width: 70%;
+    margin-left: 17%;
+    border-radius: 3px;
+  }
 }
