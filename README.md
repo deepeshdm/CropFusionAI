@@ -1,4 +1,4 @@
-<div align="center"> <h1>  🌽👨‍🌾🚜CropFusionAI  </h1> </div>
+<div align="center"> <h1>  👩‍🌾🌿 CropFusionAI  </h1> </div>
 
 <div align="center"> <h4>  🔥 Official Website 👉 https://cropfusionai.vercel.app <div align="center"> </h4> </div>
 
