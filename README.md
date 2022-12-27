@@ -9,7 +9,19 @@ An Open source Crop and Fertilizer Recommendation tool for Farmers. Machine Lear
 
 
 ## How does it work ?
-The API takes a string URL as input and returns a probability value (0-100) of URL being malicious. We declare a URL malicious if it crosses a probability value of 70%. To determine if a URL is malicious or legitimate we use a Neural Network trained on 600,000 URLs. To see how exactly the model works,checkout the model training repository [here](https://github.com/deepeshdm/Phishing-Attack-Domain-Detection).
+
+
+
+## Project Workflow
+The project will follow the same approach as used in all ML project. We'll go through different stages of data collection,feature extraction,training and finally deployment of trained model.
+
+- Data Collection
+- Feature Extraction
+- Model training & evaluation
+- Deployment
+
+
+
 
 <div align="center">
 <img src="/src/assets/phishr-demo.gif" width="80%"/>
@@ -32,4 +44,18 @@ npm install
 ```javascipt
 npm start
 ```
+
+
+## Improvements to make
+This project was done just for the sake of learning end-to-end ML deployment,so far less focus was given on optimizing model performances.Further things which can be done for Improving this model :
+- Collecting more data which has less "sparse" features.
+- Reducing the number of features through feature-selection
+- Optimising the model for precion rather than recall.
+
+
+## References & Resources Used
+This project was
+
+
+
 
