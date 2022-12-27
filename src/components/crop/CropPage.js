@@ -5,6 +5,7 @@ import "./CropPage.css"
 import { TextField } from "@mui/material"
 import { useNavigate } from "react-router-dom"
 import { output_descriptions } from "./CropOutputs"
+import LinearProgress from '@mui/material/LinearProgress';
 
 //--------------------------------------------------------------------
 
@@ -45,6 +46,7 @@ export const crop_value_ranges = {
 }
 
 
+// Called when Button Clicked
 function handleClick(navigate) {
 
     // Continue only if all fields are filled.
@@ -77,6 +79,11 @@ function handleClick(navigate) {
         return;
     }
 
+    // Make progressbar visible
+    const progressBar = document.querySelector('.crop-progress-bar');
+    progressBar.style.display = 'block';
+    progressBar.style.visibility = 'visible';
+
     // JSON payload
     const data = {
         array: [nitrogenValue, phosphorousValue, potassiumValue,
@@ -102,6 +109,7 @@ function handleClick(navigate) {
             console.error('Error:', error)
             window.alert("Some Error Occured, Try again.")
         });
+
 }
 
 //--------------------------------------------------------------------
@@ -120,6 +128,7 @@ export function CropPage() {
     return (
         <>
             <Header />
+            <LinearProgress style={{ visibility: 'hidden', display: 'none' }} className="crop-progress-bar" color="success" />
             <p className="crop-p"> Enter soil characteristics to find the  best <b> CROP </b> to grow on your farm 👩‍🌾🌽🚜</p>
             <div className="crop-container">
                 <TextField id="nitrogen-crop-input" label="Ratio of Nitrogen" variant="outlined" color="success" type="number" />

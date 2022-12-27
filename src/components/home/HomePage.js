@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { useState, useEffect } from "react";
 import { HashLoader } from "react-spinners";
+import Container from '@mui/material/Container';
 
 // path of 3D model from "Public" dir
 const model_path = 'Model/scene.gltf'
@@ -82,15 +83,17 @@ export function ModelLoader() {
         return (
             <div>
                 <Header className="header" />
-                <HashLoader
-                    className="spinner"
-                    color={"#0C9463"}
-                    loading={true}
-                    cssOverride={override}
-                    size={80}
-                    aria-label="Loading..."
-                    data-testid="loader"
-                />
+                <Container maxWidth="md">
+                    <HashLoader
+                        className="spinner"
+                        color={"#0C9463"}
+                        loading={true}
+                        cssOverride={override}
+                        size={80}
+                        aria-label="Loading..."
+                        data-testid="loader"
+                    />
+                </Container>
             </div>
         );
     }

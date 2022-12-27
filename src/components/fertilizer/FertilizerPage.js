@@ -11,6 +11,7 @@ import Select from '@mui/material/Select';
 import { output_descriptions } from "./FertilizerOutputs.js";
 import { useNavigate } from "react-router-dom";
 import { crop_value_ranges } from "../crop/CropPage.js";
+import LinearProgress from "@mui/material/LinearProgress";
 
 var soilTypeVal = ""
 var cropTypeVal = ""
@@ -155,6 +156,12 @@ function handleClick(navigate) {
     }
 
 
+    // Make progressbar visible
+    const progressBar = document.querySelector('.fertilizer-progress-bar');
+    progressBar.style.display = 'block';
+    progressBar.style.visibility = 'visible';
+
+
     // JSON payload
     const data = {
         array: [tempValue, humidityValue, moistureValue, nitrogenValue, potassiumValue,
@@ -199,6 +206,7 @@ export function FertilizerPage() {
     return (
         <>
             <Header />
+            <LinearProgress style={{ visibility: 'hidden', display: 'none' }} className="fertilizer-progress-bar" />
             <p className="fertilizer-p"> Enter soil characteristics & crop you are growing to find best <b> FERTILIZER </b> for your farm 👩‍🌾🌽🚜 </p>
             <div className="fertilizer-container">
                 <TextField id="nitrogen-fertilizer-input" label="Ratio of Nitrogen" variant="outlined" color="success" type="number" />
