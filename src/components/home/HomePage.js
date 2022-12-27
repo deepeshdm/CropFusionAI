@@ -71,15 +71,9 @@ export function ModelLoader() {
         });
     }, []);
 
-    // Spinner CSS
-    const override = {
-        display: "block",
-        margin: "0 auto",
-        marginTop: "18%"
-    };
-
     // Show Loading page if model is not loaded.
     if (isLoading == true) {
+
         return (
             <div>
                 <Header className="header" />
@@ -88,7 +82,7 @@ export function ModelLoader() {
                         className="spinner"
                         color={"#0C9463"}
                         loading={true}
-                        cssOverride={override}
+                        cssOverride={{ display: "block", margin: "0 auto", marginTop: "18%" }}  // Spinner's CSS
                         size={80}
                         aria-label="Loading..."
                         data-testid="loader"
