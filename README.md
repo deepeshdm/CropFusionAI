@@ -5,7 +5,7 @@ An Open source Crop and Fertilizer Recommendation tool for Farmers. Machine Lear
 
 <br/>
 <div align="center">
-<img src="/assets/demo.gif" width="90%"/>
+<img src="/assets/demo.gif" width="95%"/>
 </div>
 
 
