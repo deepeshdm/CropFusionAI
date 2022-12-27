@@ -50,6 +50,7 @@ npm start
 
 
 ## Links to Resources
+- Backend Code for Rest API's [here](https://github.com/deepeshdm/CropFusionAI-Backend)
 - Crop Recommendation Dataset [here](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset)
 - Fertilizer Recommendation Dataset [here](https://www.kaggle.com/datasets/gdabhishek/fertilizer-prediction)
 - 3D Model [here](https://sketchfab.com/3d-models/corn-field-scarecrow-af3361986a744421bc93c8a78caf7d89)
