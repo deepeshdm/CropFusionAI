@@ -7,6 +7,11 @@ An Open source Crop and Fertilizer Recommendation tool for Farmers. Machine Lear
 <img src="/assets/demo.gif" width="95%"/>
 </div>
 
+## 🎯 Objective
+The objective of this project is to use AI and open source technology to help poor farmers in India grow the best crops and fertilize like a pro. Our tool provides reliable and accessible recommendations based on local soil and weather conditions, helping farmers optimize their crop yields and improve their economic livelihoods.
+
+By using open source technologies, we also hope to foster a community of farmers and developers who can collaborate and continuously improve the accuracy and utility of the tool. Let's use the power of AI and open source principles to empower poor farmers in India and beyond!
+
 ## Project Workflow
 The project will follow the same approach as used in all ML project. We'll go through different stages of data collection,feature extraction,training and finally deployment of trained model.
 
