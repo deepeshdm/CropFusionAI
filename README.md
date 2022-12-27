@@ -13,15 +13,12 @@ The objective of this project is to use AI and open source technology to help po
 By using open source technologies, we also hope to foster a community of farmers and developers who can collaborate and continuously improve the accuracy and utility of the tool. Let's use the power of AI and open source principles to empower poor farmers in India and beyond!
 
 ## Project Workflow
-The project will follow the same approach as used in all ML project. We'll go through different stages of data collection,feature extraction,training and finally deployment of trained model.
+Below are some of the stages of this project for sucessfull development and deployment of both frontend and backend services.
 
-- Data Collection
-- Feature Extraction
-- Model training & evaluation
-- Deployment
-
-
-
+- Data Collection & ML model training
+- Backend Deployment of ML model API's
+- Frontend Interface with 3D model
+- Deployment of Frontend on Vercel
 
 <div align="center">
 <img src="/src/assets/phishr-demo.gif" width="80%"/>
