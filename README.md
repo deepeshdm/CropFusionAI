@@ -20,9 +20,11 @@ By using open source technologies, we also hope to foster a community of farmers
 Below are some of the stages of this project for sucessfull development and deployment of both frontend and backend services.
 
 - Data Collection & ML model training
+    - In this stage we collect the required training/testing datasets for building the crop & fertilizer recommendation models. Find training notebook [here.](https://github.com/deepeshdm/CropFusionAI-Backend/tree/main/notebooks)
 - Backend Deployment of ML model API's
+    - Once we have build the ML models we deploy and expose them as API. In our case, we have opted for FastAPI for building the backend services [here](https://github.com/deepeshdm/CropFusionAI-Backend)
 - Frontend Interface with 3D model
-- Deployment of Frontend on Vercel
+    - Once the backend has been setup , we create a user friendly frontend application with ReactJS, so that even non-technical people can easily interact with the ML models.
 
 <div align="center">
 <img src="/src/assets/phishr-demo.gif" width="80%"/>
