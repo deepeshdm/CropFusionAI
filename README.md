@@ -7,11 +7,6 @@ An Open source Crop and Fertilizer Recommendation tool for Farmers. Machine Lear
 <img src="/assets/demo.gif" width="95%"/>
 </div>
 
-
-## How does it work ?
-
-
-
 ## Project Workflow
 The project will follow the same approach as used in all ML project. We'll go through different stages of data collection,feature extraction,training and finally deployment of trained model.
 
@@ -52,8 +47,10 @@ npm start
 - Adding cache support to speed up output time.
 
 
-## References & Resources Used
-This project was
+## Links to Resources
+- Crop Recommendation Dataset [here](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset)
+- Fertilizer Recommendation Dataset [here](https://www.kaggle.com/datasets/gdabhishek/fertilizer-prediction)
+- 3D Model [here](https://sketchfab.com/3d-models/corn-field-scarecrow-af3361986a744421bc93c8a78caf7d89)
 
 
 
