@@ -47,10 +47,9 @@ npm start
 
 
 ## Improvements to make
-This project was done just for the sake of learning end-to-end ML deployment,so far less focus was given on optimizing model performances.Further things which can be done for Improving this model :
-- Collecting more data which has less "sparse" features.
-- Reducing the number of features through feature-selection
-- Optimising the model for precion rather than recall.
+- Optimizing the 3D model to reduce loading time.
+- Training the ML models on a larger dataset to provide generalized results.
+- Adding cache support to speed up output time.
 
 
 ## References & Resources Used
