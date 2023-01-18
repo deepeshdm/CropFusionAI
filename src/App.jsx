@@ -1,9 +1,9 @@
 
 import './App.css';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { ModelLoader } from './components/home/HomePage.js';
-import { CropPage } from './components/crop/CropPage.js';
-import { FertilizerPage } from './components/fertilizer/FertilizerPage.js';
+import { ModelLoader } from './components/home/HomePage.jsx';
+import { CropPage } from './components/crop/CropPage.jsx';
+import { FertilizerPage } from './components/fertilizer/FertilizerPage.jsx';
 import { CropResult } from './components/result/CropResult';
 import { FertilizerResult } from './components/result/FertilizerResult';
 

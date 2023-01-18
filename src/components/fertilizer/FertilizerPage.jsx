@@ -1,5 +1,5 @@
 
-import Header from "../header/Header.js"
+import Header from "../header/Header.jsx"
 import "./FertilizerPage.css"
 import { TextField } from "@mui/material"
 import * as React from 'react';
@@ -8,9 +8,9 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { output_descriptions } from "./FertilizerOutputs.js";
+import { output_descriptions } from "./FertilizerOutputs.jsx";
 import { useNavigate } from "react-router-dom";
-import { crop_value_ranges } from "../crop/CropPage.js";
+import { crop_value_ranges } from "../crop/CropPage.jsx";
 import LinearProgress from "@mui/material/LinearProgress";
 
 var soilTypeVal = ""

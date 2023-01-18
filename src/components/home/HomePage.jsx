@@ -1,7 +1,7 @@
 
 
-import Header from "../header/Header.js"
-import Background3D from "../3dmodel/Model.js"
+import Header from "../header/Header.jsx"
+import Background3D from "../3dmodel/Model.jsx"
 import "./HomePage.css"
 import { useNavigate } from "react-router-dom";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";

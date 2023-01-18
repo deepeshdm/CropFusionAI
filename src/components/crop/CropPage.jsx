@@ -1,6 +1,6 @@
 
 
-import Header from "../header/Header.js"
+import Header from "../header/Header.jsx"
 import "./CropPage.css"
 import { TextField } from "@mui/material"
 import { useNavigate } from "react-router-dom"
