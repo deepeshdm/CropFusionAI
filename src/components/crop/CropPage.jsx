@@ -37,7 +37,7 @@ function focusEmptyFields() {
 
 //--------------------------------------------------------------------
 
-const CROP_ENDPOINT = 'https://8080-797137136eb6451193a1f8c64a951490.patr.cloud/crop_recommend'
+const CROP_ENDPOINT = 'https://8080-797137136eb6451193a1f8c64a951490.onpatr.cloud/crop_recommend'
 
 // Min-Max values of crop inputs
 export const crop_value_ranges = {
